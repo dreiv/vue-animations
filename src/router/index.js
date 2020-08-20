@@ -20,6 +20,12 @@ Vue.use(VueRouter)
     name: 'drawer',
     component: () =>
       import(/* webpackChunkName: "list" */ '../views/Drawer.vue')
+  },
+  {
+    path: '/cards',
+    name: 'cards',
+    component: () =>
+      import(/* webpackChunkName: "list" */ '../views/Cards.vue')
   }
 ]
 
