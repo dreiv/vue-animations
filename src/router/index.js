@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Modal from '../views/Modal.vue'
-import List from '../views/List.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +12,15 @@ Vue.use(VueRouter)
   },
   {
     path: '/list',
-    name: 'List',
-    component: List
+    name: 'list',
+    component: () => import(/* webpackChunkName: "list" */ '../views/List.vue')
   },
+  {
+    path: '/drawer',
+    name: 'drawer',
+    component: () =>
+      import(/* webpackChunkName: "list" */ '../views/Drawer.vue')
+  }
 ]
 
 const router = new VueRouter({
